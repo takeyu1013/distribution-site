@@ -1,5 +1,7 @@
 import React, { FC } from 'react';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
+import { IconButton, InputBase } from '@material-ui/core';
+import { Search } from '@material-ui/icons';
 import Paper from '@material-ui/core/Paper';
 import pencil from '../../assets/images/pencil.jpg';
 
@@ -25,7 +27,12 @@ const TopMain: FC = () => {
 
   return (
     <div className={classes.background}>
-      <Paper className={classes.paper}>犬</Paper>
+      <Paper className={classes.paper}>
+        <IconButton type="submit">
+          <Search />
+        </IconButton>
+        <InputBase />
+      </Paper>
     </div>
   );
 };
