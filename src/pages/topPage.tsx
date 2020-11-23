@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 import TopHeader from '../components/topPage/topHeader';
 import TopMain from '../components/topPage/topMain';
+import ResultPage from './resultPage';
 
 const TopPage: FC = () => {
   return (
@@ -16,7 +17,7 @@ const TopPage: FC = () => {
           <TopMain />
         </Route>
         <Route exact path="/search/:keyword">
-          検索結果
+          <ResultPage />
         </Route>
       </Switch>
     </Router>
