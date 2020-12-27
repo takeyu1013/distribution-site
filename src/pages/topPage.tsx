@@ -4,6 +4,8 @@ import {
   Switch,
   Route
 } from 'react-router-dom';
+
+import DownloadPage from './downloadPage';
 import TopHeader from '../components/topPage/topHeader';
 import TopMain from '../components/topPage/topMain';
 import ResultPage from './resultPage';
@@ -18,6 +20,9 @@ const TopPage: FC = () => {
         </Route>
         <Route exact path="/search/:keyword">
           <ResultPage />
+        </Route>
+        <Route exact path="/download/:keyword">
+          <DownloadPage />
         </Route>
       </Switch>
     </Router>

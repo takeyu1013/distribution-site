@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 
 import firebase from '../../firebase';
-import { TileData } from '../../types/types';
+import { Params, TileData } from '../../types/types';
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -23,8 +23,7 @@ const useStyles = makeStyles(() =>
 );
 const ImageItemList: FC = () => {
   const [data, setData] = useState<TileData[]>([]);
-  type Prams = { keyword: string };
-  const { keyword } = useParams<Prams>();
+  const { keyword } = useParams<Params>();
   const classes = useStyles();
   const history = useHistory();
 
