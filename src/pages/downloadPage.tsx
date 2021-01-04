@@ -1,14 +1,24 @@
 import React, { FC, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 
 import firebase from '../firebase';
 import TopHeader from '../components/topPage/topHeader';
 import { Params, TileData } from '../types/types';
 
-const useStyles = makeStyles(() => {
-  createStyles({});
-});
+const useStyles = makeStyles(() =>
+  createStyles({
+    main: {
+      textAlign: 'center',
+      marginTop: '5%'
+    },
+    tileImage: {
+      height: '436px',
+      width: '436px'
+    }
+  })
+);
 
 const DownloadPage: FC = () => {
   const { keyword } = useParams<Params>();
@@ -44,9 +54,27 @@ const DownloadPage: FC = () => {
       </div>
     );
   };
+
+  const downloadButton = () => {
+    return (
+      <div>
+        {data.map((tile) => (
+          <Button
+            variant="contained"
+            href={tile.downloadUrl}
+          >
+            無料ダウンロード
+          </Button>
+        ))}
+      </div>
+    );
+  };
   return (
     <div>
-      {displayImage()}
+      <div className={classes.main}>
+        {displayImage()}
+        {downloadButton()}
+      </div>
     </div>
   );
 };
